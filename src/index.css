@@ -4,72 +4,225 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --background: 20 60% 3%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 153 88% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 7% 92%;
+    --secondary-foreground: 20 60% 3%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 225 5% 57%;
+    --accent: 153 88% 20%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 7% 92%;
+    --input: 220 7% 92%;
+    --ring: 153 88% 20%;
     --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --green-brand: #066137;
+    --dark-bg: #0D0802;
+    --near-black: #1A1A1A;
+    --light-gray: #E6E8EC;
+    --text-gray: #8A8F98;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: 'Century Gothic', 'CenturyGothic', 'Josefin Sans', sans-serif;
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Affect', 'Montserrat', sans-serif;
+    word-break: keep-all;
+  }
+
+  ::selection {
+    background-color: #E6E8EC;
+    color: #0D0802;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.12em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+    color: var(--green-brand);
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .heading-1 {
+    @apply text-[40px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] tracking-[-0.03em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
   }
+
+  .heading-2 {
+    @apply text-[32px] md:text-[44px] lg:text-[56px] font-bold leading-[1.1] tracking-[-0.02em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-[28px] lg:text-[32px] font-semibold leading-[1.2] tracking-[-0.01em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+  }
+
+  .body-large {
+    @apply text-base md:text-lg lg:text-xl font-normal leading-relaxed;
+    font-family: 'Century Gothic', 'CenturyGothic', 'Josefin Sans', sans-serif;
+  }
+
+  .body-text {
+    @apply text-sm md:text-base font-normal leading-relaxed;
+    font-family: 'Century Gothic', 'CenturyGothic', 'Josefin Sans', sans-serif;
+  }
+
+  .label-text {
+    @apply text-xs font-semibold uppercase tracking-[0.12em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+  }
+
+  .stat-number {
+    @apply text-[48px] md:text-[56px] lg:text-[72px] font-bold leading-none tracking-[-0.02em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+    color: var(--green-brand);
+  }
+
+  .stat-number-dark {
+    @apply text-[48px] md:text-[56px] lg:text-[72px] font-bold leading-none tracking-[-0.02em];
+    font-family: 'Affect', 'Montserrat', sans-serif;
+    color: var(--dark-bg);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-[120px];
+  }
+
+  .content-max {
+    @apply max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20;
+  }
+
+  .card-surface {
+    @apply rounded-xl p-6 md:p-8 lg:p-10;
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(230, 232, 236, 0.08);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .card-surface:hover {
+    border-color: rgba(6, 97, 55, 0.4);
+    background: rgba(26, 26, 26, 0.8);
+  }
+
+  .pill-button {
+    @apply inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-xs md:text-sm uppercase tracking-wider transition-all duration-200;
+    font-family: 'Affect', 'Montserrat', sans-serif;
+  }
+
+  .pill-button:hover {
+    transform: scale(1.03);
+  }
+
+  .pill-button-primary {
+    @apply pill-button;
+    background-color: var(--green-brand);
+    color: #ffffff;
+  }
+
+  .pill-button-primary:hover {
+    background-color: #087a45;
+  }
+
+  .pill-button-secondary {
+    @apply pill-button;
+    background-color: #ffffff;
+    color: var(--dark-bg);
+  }
+
+  .pill-button-secondary:hover {
+    background-color: var(--light-gray);
+  }
+
+  .pill-button-outline {
+    @apply pill-button;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(230, 232, 236, 0.3);
+  }
+
+  .pill-button-outline:hover {
+    border-color: var(--green-brand);
+    color: var(--green-brand);
+    background-color: rgba(6, 97, 55, 0.08);
+  }
+}
+
+@layer utilities {
+  .text-green-brand {
+    color: var(--green-brand);
+  }
+
+  .bg-green-brand {
+    background-color: var(--green-brand);
+  }
+
+  .bg-dark {
+    background-color: var(--dark-bg);
+  }
+
+  .bg-light-gray {
+    background-color: var(--light-gray);
+  }
+
+  .text-gray-custom {
+    color: var(--text-gray);
+  }
+
+  .border-light-subtle {
+    border-color: rgba(230, 232, 236, 0.08);
+  }
+
+  .font-body {
+    font-family: 'Century Gothic', 'CenturyGothic', 'Josefin Sans', sans-serif;
+  }
+}
+
+@keyframes scroll-hint {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+.scroll-hint-circle {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+.num-dimmed {
+  color: rgba(230, 232, 236, 0.15);
+}
+
+.num-wrap {
+  color: var(--green-brand);
+}
+
+.num-suffix {
+  color: var(--green-brand);
+  margin-left: 4px;
 }
